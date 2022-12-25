@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="PATTERN" value="%d{dd-MM-yyyy HH:mm:ss.SSS} %level: %msg | request #%X{requestNumber}%n" />
+    <property name="LOG_DIR" value="logs" />
+
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="requestsFileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>
+            ${LOG_DIR}/requests.log
+        </file>
+        <encoder>
+            <pattern>${PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="stackFileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>
+            ${LOG_DIR}/stack.log
+        </file>
+        <encoder>
+            <pattern>${PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="independentFileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>
+            ${LOG_DIR}/independent.log
+        </file>
+        <encoder>
+            <pattern>${PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="request-logger" level="INFO">
+        <appender-ref ref="consoleAppender"/>
+        <appender-ref ref="requestsFileAppender"/>
+    </logger>
+
+    <logger name="stack-logger" level="INFO">
+        <appender-ref ref="stackFileAppender"/>
+    </logger>
+
+    <logger name="independent-logger" level="DEBUG">
+        <appender-ref ref="independentFileAppender"/>
+    </logger>
+</configuration>
