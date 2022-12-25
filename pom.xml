@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.pherom</groupId>
-	<artifactId>kaplat-ex3-elad-moshe</artifactId>
+	<artifactId>kaplat-ex4-elad-moshe</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>kaplat-ex3-elad-moshe</name>
+	<name>kaplat-ex4-elad-moshe</name>
 	<description>Workshop skills course - exercise 2 - Basic HTTP server development</description>
 	<properties>
 		<java.version>17</java.version>
